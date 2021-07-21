@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>준비됐멍?(반려견 입양 준비도 테스트)</title>
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="test_page.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel="icon" href="img/favicon.png">
+
+</head>
+<body>
+  <nav class="navbar" style="margin-bottom: 3vmin;">
+    <div class="container" style="margin-top:10px;">
+      <div class="navbar-header"style="padding-left:15px;">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand brand_flex" href="#">
+          <div class="">
+            <div style="font-weight:bold;color: #3C64B1;font-size: 80%;margin-bottom: 5px;" onclick="location.href='main_page.html'">ARE YOU READY?</div>
+            <div style="font-weight:bold;font-size: 120%;color: black;">준비됐멍?</div>
+          </div>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-right collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="test_page.html">반려견 입양 준비도 테스트</a></li>
+          <li><a href="adoption_page.html">유기견 입양</a></li>
+          <li><a href="about_us_page.html">About US</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="controller">
+      <button id="prev"onclick="prev()" style="position: absolute;top: 50%; left:0%;"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 이전문제</button>
+      <button id="next" onclick="next()" style="position: absolute;top: 50%; right: 0%;">다음문제 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>  
+    </div>
+    <div class="container">
+      <div class="container container-main">
+        <div class="imgGroup">
+          <img id="dangdang" style="width:10%;position:absolute;left: 0%;" src="img/puppy.png"/>
+          <img style="width:10%; float: right;" src="img/puppy_house.png"/>
+        </div>
+        <div class="progress">
+          <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10%;"></div>
+        </div>
+        <div class="question" id="question"></div>
+        <div class="answer" id="answer"></div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <img src="/img/test_banner.png" style="width:60%"onclick="load();"/>
+  </footer>
+  <script>
+    function load(){
+      location.href="https://www.animal.go.kr/front/community/show.do?boardId=contents&seq=53&menuNo=1000000058";
+    }
+    var count=0;
+    var strAnswer;
+    var chkAnswer=-1;
+    var intBtn=0;
+    var score=0;
+    var arr=new Array();
+    var arrBtn=new Array();
+    getData();
+    function getData(){
+      $.get('data.csv', function(data) {
+        var head = data.split("\n");
+        for(var i=0;i<head.length;i++){
+          if(i==0){
+            continue;
+          }
+          var text = head[i].split(",");
+          var temp=new Array();
+          for(var j=0;j<text.length;j++){
+            temp.push(text[j]);
+          }
+          arr.push(temp);
+        }
+        getQuestion();
+      });
+    }
+    function getQuestion(){
+      $('#question').empty();
+      $('#answer').empty();
+      var top_html="";
+      var mid_html="";
+      var answer_html="";
+      var imgDangDang=document.getElementById("dangdang");
+      var progress=document.getElementById("progress");
+      var percent_dog=String(parseInt((count/arr.length)*100))+"%";
+      var percent_bar=String(parseInt((count/arr.length)*100)+5)+"%";
+      progress.style.width=percent_bar;
+      imgDangDang.style.left=percent_dog;
+      if(count==arr.length-1){
+        if(score>15){
+          setTimeout(() => location.href='pass_page.html', 2000);   
+        }
+        else{
+          setTimeout(() => location.href='failure_page.html', 2000);   
+        }
+        alert("내 점수는 "+score+"입니다.");
+        //alert("문제끝");
+      }
+      else{
+        top_html+='<div class="title"><h1>'+arr[count][0]+'</h1></div>';
+        top_html+='<div class="subtitle"><h3>'+arr[count][1]+'</h3></div>';
+        temp=arr[count][3].split(";");
+        for(var j=0;j<temp.length;j++){
+          mid_html+='<button id="'+j+'" onclick="item(this.id)">'+temp[j]+'</button>';
+          intBtn=j;
+        }
+        strAnswer=arr[count][5]-1;
+        $('#question').append(top_html);
+        $('#answer').append(mid_html);
+        for(var tmp=0;tmp<=intBtn;tmp++){
+          arrBtn.push(document.getElementById(tmp));
+        }
+      }
+      count++;
+    }
+    function item(id) {
+      for(var tmp=0;tmp<arrBtn.length;tmp++){
+        if(tmp==id){
+          arrBtn[tmp].style.background="#3C64B1";
+          arrBtn[tmp].style.color="#ffffff";
+          arrBtn[tmp].style.border="2px solid #3C64B1";
+          chkAnswer=tmp;
+        }
+        else{
+          arrBtn[tmp].style.background="#ffffff";
+          arrBtn[tmp].style.color="#3C64B1";
+          arrBtn[tmp].style.border="2px solid #3C64B1";
+        }
+      }
+    }
+    function prev() {
+    var btn=document.getElementById("prev");
+      if(btn.style.color != "rgb(255, 255, 255)"){
+        btn.style.background="#D3335A";
+        btn.style.color="#ffffff";
+      }
+      else{
+        btn.style.background="#ffffff";
+        btn.style.color="#D3335A";
+      }
+    }
+    function next() {
+      if(chkAnswer<0){
+          //응답안함
+          alert("응답해주세요.");
+      }
+      else if(chkAnswer>=0){
+          //정상
+          checkanswer(chkAnswer);
+      }
+    }
+    function checkanswer(chkAnswer){      
+      if(strAnswer==chkAnswer){
+        arrBtn[chkAnswer].style.background="#32bb6b";
+        arrBtn[chkAnswer].style.border="2px solid #32bb6b";
+        score++;
+        goNext();
+      }
+      else{
+        arrBtn[strAnswer].style.background="#32bb6b";
+        arrBtn[strAnswer].style.border="2px solid #32bb6b";
+        arrBtn[strAnswer].style.color="#ffffff";
+        arrBtn[chkAnswer].style.background="#D3335A";
+        arrBtn[chkAnswer].style.border="2px solid #D3335A";
+        goNext();
+      }
+    }
+    function goNext(){
+      var sum=3;
+      var next=document.getElementById("next");
+      next.disabled = true;
+      chkAnswer=-1;
+      arrBtn=new Array();
+      next.innerHTML=sum+"초 "+ '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>';
+      var timer = setInterval(function() {
+        sum--;
+        next.innerHTML=sum+"초 "+ '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>';
+        if(sum==0){
+          clearInterval(timer);
+          next.disabled = false;
+          next.innerHTML='다음 문제 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>';
+          getQuestion();
+          item(-1);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

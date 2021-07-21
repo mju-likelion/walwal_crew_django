@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>준비됐멍?(Adoption)</title>
+  <link rel="icon" href="{% static '/img/favicon.ico' %}">
+  <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+  .but{
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    right: 280px;
+    top: calc(72% - 110px/2 + 19px);
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  #butt{
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #3C64B1;
+        color: #FFFFFF;
+        border: 2px solid #3C64B1;
+        padding:  0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 179px;
+        height: 42px;
+    
+  }  
+  #button2{
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #3C64B1;
+        color: #FFFFFF;
+        border: 2px solid #3C64B1;
+        padding:  0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 179px;
+        height: 42px;
+  } 
+  
+  h1{
+    position: absolute;
+    width: 489px;
+    height: 56px;
+    right: 258px;
+    top: calc(50% - 56px/2 - 106px);
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 56px;
+    letter-spacing: 0.2px;
+    color: #373F41;
+  }
+  p{
+    position: absolute;
+    width: 491px;
+    height: 110px;
+    right: 295px;
+    top: calc(50% - 110px/2 + 19px);
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #737B7D;
+    margin-top: 40px;
+  }
+  #adop{
+    position: absolute;
+    width: 750px;
+    height: 500px;
+    left: 150px;
+    top: 202px;
+  }
+  .all{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 56px/2 - 106px);
+    right: 42px;
+    width: 0%;
+    height: 0%;
+    margin-top: 30px;
+  }
+  #open{
+    width: 100px;
+    height: 100px;
+    margin-right: 390px;
+    
+  }
+  #close{
+    width: 100px;
+    height: 100px;
+    margin-top: 120px;
+    margin-left: 20px;
+    margin-right: 190px;
+  }
+ 
+  .navbar-right li a{
+      font-weight: bold;
+  }
+  .no a{
+      color:black;
+  }
+  .navbar-right li a:hover{
+      color: #3C64B1;
+  }
+  nav{
+    color: black;
+  }
+</style>
+<body>
+  <nav class="navbar navbar-static-top bg-white">
+    <div class="container">
+      <div class="navbar-brand brand_flex">
+        <div style="font-weight:bold;color: #3C64B1;font-size: 80%;"><a href="{% url 'main' %}" style="text-decoration: none;">ARE YOU READY?</a></div>
+        <div style="font-weight:bold;font-size: 120%; margin-top: 5%;">준비됐멍?</div>
+      </div>
+      <ul class="nav navbar-nav navbar-right" style="margin-top:1%">
+        <li class="no"><a href="test_page.html">반려견 입양 준비도 테스트</a></li>
+        <li class="active"><a href="{% url 'adoption' %}">유기견 입양</a></li>
+        <li class="no"><a href="{% url 'aboutus' %}">About US</a></li>
+      </ul>
+    </div>
+  </nav>
+  <img id ="adop" src="{% static '/img/adoption.png' %}" alt="puppy">
+  <div class="all">
+    <img id="open" src="{% static '/img/open_quotation_mark.png' %}" alt="'">
+    <img id="close" src="{% static '/img/close_quotation_mark.png' %}" alt="'">
+  </div>
+    <h1>사지말고 입양하세요</h1>
+    <P>
+        유기견 입양, 행복하고 따듯한 기억으로<br>
+        두 번쨰 삶을 함께 만들어 가는 시작이에요.<br>
+        <br>
+        책임감과 충분한 사람이 준비된 당신을 만나기 위해<br>
+        기다리고 있는 아이가 있답니다.
+        <br>
+    </P>
+    <div class="but">
+        <button onclick="location.href='https://www.animal.go.kr/front/community/show.do?boardId=contents&seq=53&menuNo=1000000058'" id="butt" onmouseout="change2(this)" onmouseover="change1(this)">유기견 입양 지원정책</button>
+        <button onclick="location.href='http://saac.kr/?act=board&bbs_code=sub2_1'" id="button2" onmouseout="change2(this)" onmouseover="change1(this)">유기견 입양 바로가기</button>
+    </div>
+    <script lang="JavaScript">
+        function change1(obj) {
+          obj.style.background = '#FFFFFF';
+          obj.style.color = '#3C64B1';
+        }
+      
+        function change2(obj){
+            obj.style.background = '#3C64B1';
+            obj.style.color = '#FFFFFF';
+          }
+        function change3(obj){
+            obj.style.background = '#737B7D';
+            obj.style.color = 'white';
+          }
+        function change4(obj){
+          obj.style.background = 'white';
+          obj.style.color = 'black';
+          }
+        function change5(obj){
+            obj.style.color = 'black';
+        }
+        function change6(obj){
+            obj.style.color = '#3C64B1';
+        }
+      </script>
+</html>

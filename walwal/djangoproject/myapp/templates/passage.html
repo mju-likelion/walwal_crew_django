@@ -1,0 +1,167 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>준비됐멍?(Pass)</title>
+    <link rel="icon" href="{% static '/img/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-static-top bg-white">
+        <div class="container">
+          <div class="navbar-brand brand_flex">
+            <div style="font-weight:bold;color: #3C64B1;font-size: 80%;"><a href="{% url 'main' %}" style="text-decoration: none;">ARE YOU READY?</a></div>
+            <div style="font-weight:bold;font-size: 120%; margin-top: 5%;">준비됐멍?</div>
+          </div>
+          <ul class="nav navbar-nav navbar-right" style="margin-top:1%">
+            <li class="active"><a href="test_page.html" onmouseout="change5(this)" onmouseover="change6(this)">반려견 입양 준비도 테스트</a></li>
+            <li><a href="{% url 'adoption' %}" onmouseout="change5(this)" onmouseover="change6(this)">유기견 입양</a></li>
+            <li><a href="{% url 'aboutus' %}" onmouseout="change5(this)" onmouseover="change6(this)">About US</a></li>
+          </ul>
+        </div>
+      </nav>
+    <main>
+        <div class="Img">
+            <img style="width: 40%; position:absolute; right: 50%;" src="{% static '/img/pass.png' %}">
+        </div>
+        <div id="title">
+            <h1>입양 준비 끝!</h1>
+            <div>
+                <h3 id="subtitle">준비됐멍?(주)에서 시행한 멍멍고사의 반려동물 입양 준비도 테스트에서<br>합격기준을 달성하였기에 이 인증서를 수여합니다.</h3>
+            </div>
+            <div class="button">
+                <button onclick="location.href='main_page.html'" id="back" onmouseout="change2(this)" onmouseover="change1(this)">메인화면으로 돌아가기</button>
+                <button onclick="location.href='#'" id="sns" onmouseout="change2(this)" onmouseover="change1(this)">SNS 공유하기</button>
+            </div>
+            <div class="ban">
+                <button onclick="location.href='http://saac.kr/?act=board&bbs_code=sub2_1'" id="banner" onmouseout="change3(this)" onmouseover="change4(this)">혹시 유기견 입양에 관심이 있으신가요?</button> 
+            </div>
+        </div>
+
+    </main>
+</body>
+<script lang="JavaScript">
+  function change1(obj) {
+    obj.style.background = '#FFFFFF';
+    obj.style.color = '#3C64B1';
+  }
+
+  function change2(obj){
+      obj.style.background = '#3C64B1';
+      obj.style.color = '#FFFFFF';
+    }
+  function change3(obj){
+      obj.style.background = '#737B7D';
+      obj.style.color = 'white';
+    }
+  function change4(obj){
+    obj.style.background = 'white';
+    obj.style.color = 'black';
+    }
+    function change5(obj){
+      obj.style.color = 'black';
+      }
+    function change6(obj){
+      obj.style.color = '#3C64B1';
+     }
+</script>
+<style>
+    .ban {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+        font-size: 14px;
+    }
+    .button {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 60px;
+
+    }
+    #back {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #3C64B1;
+        color: #FFFFFF;
+        border: 2px solid #3C64B1;
+        padding:  0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 179px;
+        height: 42px;
+
+    }
+    #sns {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #3C64B1;
+        color: #FFFFFF;
+        border: 2px solid #3C64B1;
+        padding:  0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 179px;
+        height: 42px;
+    
+    }
+    #banner {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #737B7D;
+        color: white;
+        border: 2px solid #737B7D;
+        padding:  0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: 494px;
+        height: 42px;
+        
+    }
+    #title { 
+        font-family: Mulish;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        width: 45%;
+        position: absolute;
+        left: 50%;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #subtitle {
+        
+        font-family: Mulish;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #737B7D;
+        margin-top: 60px;
+        
+    }
+   
+    .navbar-right li a{
+      color: black;
+      font-weight: bold;
+    }
+    nav{
+      color: black;
+    }
+    .Img {
+    position:relative;
+    margin-bottom: 10%;
+    }
+  </style>
+</html>

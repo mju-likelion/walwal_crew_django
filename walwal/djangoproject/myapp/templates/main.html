@@ -1,0 +1,256 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>준비됐멍?(Main)</title>
+    <link rel="icon" href="{% static '/img/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href= "/static/full-page-scroll.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+        .navbar-right li a{
+        color: black;
+        font-weight: bold;
+        }
+        nav{
+        color: black;
+        }
+        .main_1{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: left;
+            padding: 30px;
+            position: absolute;
+            width: 200px;
+            height: 246px;
+            left: calc(50% - 445px/2 - 397px);
+            top: calc(50% - 246px/2 - 120px);
+            
+        }
+        #main1{
+            position: relative;
+            width: 445px;
+            height: 30px;
+            right:-5px;
+            
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 22px;
+            line-height: 18px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            color: #3C64B1;
+        }
+        #main2{
+            position: relative;
+            width: 445px;
+            height: 56px;
+            right: 0px;  
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 44px;
+            line-height: 56px;
+            letter-spacing: 0.2px;
+            color: #373F41;
+        }
+        #main3{
+            position: relative;
+            width: 445px;
+            height: 22px;
+            right: -8px;
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: 0.3px;
+            color: #737B7D;
+        }
+        .main_2{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: left;
+            padding: 30px;
+            position: absolute;
+            width: 467px;
+            height: 246px;
+            left: calc(50% - 467px/2 + 352px);
+            top: 130%;
+        }
+        #main4{
+            position: relative;
+            width: 445px;
+            height: 30px;
+            right:-5px;
+            
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 22px;
+            line-height: 18px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            color: #D3335A;
+        }
+        #main5{
+            position: relative;
+            width: 445px;
+            height: 56px;
+            right: 0px;      
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 44px;
+            line-height: 56px;
+            letter-spacing: 0.2px;
+            color: #fff;
+        }
+        #main6{
+            position: relative;
+            width: 445px;
+            height: 22px;
+            right: -8px;    
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            letter-spacing: 0.3px;
+            color: #fff;
+        }
+        #button1{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 12px 18px;
+            background: #fff;
+            position: relative;
+            width: 120px;
+            height: 40px;
+            right: -65px;
+            top: 70px;
+            color: #3C64B1;  
+            border: 1px solid #3C64B1;
+            box-sizing: border-box;
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            border-radius: 0px;
+            transition:0.3s;
+            transform: translate(-50%,-50%);
+        
+        }
+        #button2{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 12px 18px;
+            background: #fff;
+            position: relative;
+            width: 120px;
+            height: 40px;
+            right: -65px;
+            top: 70px;
+            color: #D3335A;  
+            border: 1px solid #D3335A;
+            box-sizing: border-box;
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 18px;
+            border-radius: 0px;
+            transition:0.3s;
+            transform: translate(-50%,-50%);
+        }
+        .section1 {
+            background-image: url("{% static '/img/main_first_background.png' %}");
+        }
+        .section2 {
+            background-image: url("{% static '/img/main_second_background.png' %}");
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-static-top bg-white">
+        <div class="container">
+          <div class="navbar-brand brand_flex">
+            <div style="font-weight:bold;color: #3C64B1;font-size: 80%;"><a href="{% url 'main' %}" style="text-decoration: none;">ARE YOU READY?</a></div>
+            <div style="font-weight:bold;font-size: 120%; margin-top: 5%;">준비됐멍?</div>
+          </div>
+          <ul class="nav navbar-nav navbar-right" style="margin-top:1%">
+            <li class="active"><a href="test_page.html" onmouseout="change5(this)" onmouseover="change6(this)">반려견 입양 준비도 테스트</a></li>
+            <li><a href="{% url 'adoption' %}" onmouseout="change5(this)" onmouseover="change6(this)">유기견 입양</a></li>
+            <li><a href="{% url 'aboutus' %}" onmouseout="change5(this)" onmouseover="change6(this)">About US</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="main" class="scroll-container">
+		<section class="section1">
+			<div>
+                <a class="main_1" style="text-decoration: none;">
+				<h3 id="main1">TEST 1</h3>
+                <h1 id="main2">입양준비됐어?</h1>
+                <p id="main3">반려견 입양을 준비하는 당신, 과연 정말로 준비 되셨나요? </p> 
+                <button id="button1" onmouseout="change1(this)" onmouseover="change2(this)" onclick="location.href='test_page.html'"> 테스트 시작! </button>
+			</div>
+		</section>
+		<section class="section2">
+			<div>
+                <a class="main_2" style="text-decoration: none;">
+				<h3 id="main4">TEST 2</h3>
+                <h1 id="main5">비기너 버전 테스트 </h1>
+                <p id="main6"> 반려견을 키우고 있는 당신, 반려견과 어떻게 지내고 계신가요? </p> 
+                <button id="button2" onmouseout="change4(this)" onmouseover="change3(this)" onclick="location.href='test_sub_page.html'"> 테스트 시작! </button>	
+			</div>
+		</section>
+	</div>
+    <script src="/static/full-page-scroll.min.js"></script>
+	<script type="text/javascript">
+		new fullScroll({
+			displayDots: true,
+			dotsPosition: 'left',
+			animateTime: 0.7,
+			animateFunction: 'ease'
+		});
+	</script>
+    <script lang="JavaScript">
+        function change1(obj) {
+          obj.style.background = '#FFFFFF';
+          obj.style.color = '#3C64B1';
+        }
+      
+        function change2(obj){
+            obj.style.background = '#3C64B1';
+            obj.style.color = '#FFFFFF';
+          }
+        function change3(obj){
+            obj.style.background = '#D3335A';
+            obj.style.color = 'white';
+          }
+        function change4(obj){
+          obj.style.background = 'white';
+          obj.style.color = '#D3335A';
+          }
+        function change5(obj){
+          obj.style.color = 'black';
+          }
+        function change6(obj){
+          obj.style.color = '#3C64B1';
+          }
+      </script>
+</body>
+</html>
