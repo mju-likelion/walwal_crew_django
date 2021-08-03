@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>준비됐멍?(community)</title>
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-static-top bg-white">
+        <div class="container">
+          <div class="navbar-brand brand_flex">
+            <div style="font-weight:bold;color: #3C64B1;font-size: 80%;"><a href="main_page.html" style="text-decoration: none;">ARE YOU READY?</a></div>
+            <div style="font-weight:bold;font-size: 120%; margin-top: 5%;">준비됐멍?</div>
+          </div>
+          <ul class="nav navbar-nav navbar-right" style="margin-top:1%">
+            <li class="active"><a href="test_page.html" onmouseout="change5(this)" onmouseover="change6(this)">반려견 입양 준비도 테스트</a></li>
+            <li><a href="adoption_page.html" onmouseout="change5(this)" onmouseover="change6(this)">유기견 입양</a></li>
+            <li><a href="about_us_page.html" onmouseout="change5(this)" onmouseover="change6(this)">About US</a></li>
+          </ul>
+        </div>
+      </nav>
+    <main>
+        <div class="community">
+            <div id="two">
+                <div id="cu">커뮤니티</div>
+                <div id="gong">갱얼쥐와 관련한 퀴즈로 같이 이야기 나눠요</div>
+            </div>
+            <button id="quiz" onmouseout="change3(this)" onmouseover="change4(this)" onclick="location.href='#'">퀴즈 만들기</button>
+        </div>
+        <hr />
+        <div class="jo">
+            <div id="tw">
+                <div id="soon">조회순</div>
+                <div id="shin">최신순</div>
+            </div>
+            <div id="jjj">작성자 / 작성일 / 조회수</div>
+        </div>
+        <br>
+        <div class="empty">
+            <div id="nt">
+                <div id="No">1</div>
+                <div id="Title">배달원이 초인종을 눌렀을 때 우리 강아지는</div>
+            </div>
+            <div id="WDH">하쎼 / 21-07-25 / 121</div>
+        </div>
+    </main>
+    <!-- <ul class="w3-pagination">
+        <li><a href="#" class="w3-hover-purple">&laquo;</a></li>
+        <li><a href="#" class="w3-hover-green">1</a></li>
+        <li><a href="#" class="w3-hover-red">2</a></li>
+        <li><a href="#" class="w3-hover-blue">3</a></li>
+        <li><a href="#" class="w3-hover-black">4</a></li>
+        <li><a href="#" class="w3-hover-orange">&raquo;</a></li>
+      </ul> -->
+</body>
+<style>
+
+    main{
+        padding: 62px 260px;
+    }
+    .community{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    #cu{
+        color: #070707;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    #two{
+        display: flex;
+    }
+    #gong{
+        position: relative;
+        left: 26px;
+        color: #837D7D;
+        font-weight: bold;
+        font-size: 15px;
+        margin-top: 3px;
+    }
+    #quiz{
+        color: #FFFFFF;
+        background-color: #D3335A;
+        padding: 6px 16px;
+        border: 1px solid #D3335A;
+        line-height: 18px;
+    }
+    .jo{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50px;
+    }
+    #soon{
+        color:#5B5A5A;
+    }
+    #tw{
+        display: flex;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 22px;
+    }
+    #shin{
+        position: relative;
+        left: 26px;
+        color:#8E8787;
+    }
+    #jjj{
+        color:#837D7D;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 18px;
+    }
+    .empty{
+        display: flex;
+        justify-content: space-between;
+    }
+    #No{
+        color:#3C64B1;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 18px;
+    }
+    #nt{
+        display: flex;
+    }
+    #Title{
+        position: relative;
+        left: 100px;
+        color: #070707;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 18px;
+    }
+    #WDH{
+        color:#837D7D;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: bold;
+    }
+
+    hr{
+        border-top:3px solid #000000; border-bottom:1px solid #F6F6F6; 
+        margin-top: 15px;
+    }
+    .navbar-right li a{
+      color: black;
+      font-weight: bold;
+    }
+    nav{
+      color: black;
+    }
+
+</style>
+<script lang="JavaScript">
+    function change1(obj) {
+      obj.style.background = '#FFFFFF';
+      obj.style.color = '#3C64B1';
+    }
+  
+    function change2(obj){
+        obj.style.background = '#3C64B1';
+        obj.style.color = '#FFFFFF';
+      }
+    function change3(obj){
+        obj.style.background = '#D3335A';
+        obj.style.color = 'white';
+      }
+    function change4(obj){
+      obj.style.background = 'white';
+      obj.style.color = '#D3335A';
+      }
+    function change5(obj){
+      obj.style.color = 'black';
+      }
+    function change6(obj){
+      obj.style.color = '#3C64B1';
+      }
+  </script>
