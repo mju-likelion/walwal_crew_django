@@ -1,177 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>준비됐멍?(Main)</title>
-    <link rel="icon" href="/img/favicon.ico">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<style type="text/css">
-        .navbar-right li a{
-        color: black;
-        font-weight: bold;
-        }
-        nav{
-        color: black;
-        }
-       
-        #button{
-          
-            
-            justify-content: space-between;
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>준비됐멍?(Main)</title>
+ <link rel="icon" href="/img/favicon.ico">
+ <link rel="shortcut icon" href="/img/favicon.ico">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+
+ <style type="text/css">
+     .navbar-right li a{
+     color: black;
+     font-weight: bold;
+     }
+     nav{
+     color: black;
+     }
+
+    .quiz-container{
+        display: flex ;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 58px;
+        margin-right: 50px;
+    }
+    .quiz-head{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    #button{
+            display: flex;
+            flex-direction: row;
+            Justify-content: center;
             align-items: center;
+            padding: 12px 18px;
             background: #D3335A;
-            position: absolute;
             width: 115px;
             height: 40px;
-            right: 440px;
-            top: calc(50% - 22px/2 - 170px);
             color: #fff;  
             border: 1px solid #D3335A;
             box-sizing: border-box;
             font-family: Mulish;
-            font-style: normal;
             font-weight: bold;
             font-size: 14px;
             line-height: 18px;
             border-radius: 0px;
-            transform: translate(-50%,-50%);
+
 
         }
-
-        #title{
-          position: absolute;
-          width: 200px;
-          height: 22px;
-          left: calc(50% - 82px/2 - 408.5px);
-          top: calc(50% - 22px/2 - 200px);
+    #title{
           font-family: Mulish;
           font-style: normal;
           font-weight: bold;
           font-size: 25px;
           line-height: 18px;
-          display: flex;
-          align-items: center;
+          margin: 0 auto ;
           letter-spacing: 0.2px;
           color: #070707;
+          padding: 1.5vmin;
         }
-        
-        #sub_title{
-          position: absolute;
-          width: 400px;
-          height: 25px;
-          left: calc(50% - 366px/2 - 115px);
-          top: calc(50% - 25px/2 - 178.5px);
+
+    #sub_title{
           font-family: Mulish;
           font-style: normal;
           font-weight: bold;
           font-size: 15px;
           line-height: 18px;
-          display: flex;
-          align-items: center;
           letter-spacing: 0.2px;
+          margin: 0 auto ;
           color: #837D7D;
+          padding: 1.5vmin;
         }
-        
-        .box-solid {
-        border-style: solid;
+
+    .box-solid {
+        border-style: solid;  
+        height: 1px;     
+        background: black;
+        }
+
+    .mainbox{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        position: absolute;
-        width: 915px;
-        height: 4px;
-        left: calc(50% - 915px/2 + 8px);
-        top: calc(50% - 1px/2 - 165px);
-        background: #000000;
-        }
+        padding: 28px 20px 63px;
+        align-items: center; 
+        justify-content: center;
+    }
 
-        .forming{    
-          flex-direction: row;
-          align-items: center;
-          padding: 12px 18px;
-          position: absolute;
-          width: 915px;
-          height: 328px;
-          left: calc(50% - 915px/2 + 10px);
-          top: 370px;
-          background: rgba(251, 251, 251, 0.79);
-          border: 1px solid #BBBBBB;
-          box-sizing: border-box;     
-        }
-        #form_title{ 
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          font-family: Mulish;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 15px;
-          line-height: 22px;
-          letter-spacing: 0.3px;
-          color: #5B5A5A;
-        }
+    .question{
+        display: flex;
+        background: #FFFFFF;
+        border: 2px dashed #9F8D9F;
+        background-size: 3px 1px;
+        border-radius: 50px;
+        font-family: Mulish;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 56px;
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: #8E8787;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .answer{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 130px;
+  }
+    .answer textarea{
+        resize: none;
+        margin:1%;
+        border:2px solid #3C64B1;
+        box-sizing: border-box;
+        background:#FFFFFF;
+        color: #3C64B1;
+        font-weight: bold;
+        font-size: 2vmin;
+        padding: 1.5vmin;
+        text-align: center;
 
-        #form_body{
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          font-family: Mulish;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 15px;
-          line-height: 22px;
-          letter-spacing: 0.3px;
-          color: #5B5A5A;
-        }
+  }
+    .answer button:hover{
+        background-color:;
+        color: #FFFFFF;
+  }
+    #add_answer{
+        margin:1%;
+        border:2px solid ;
+        box-sizing: border-box;
+        background-color: #bbb7b7 ;
+        border: 1px solid #bbb7b7;
+        font-weight: bold;
+        font-size: 2vmin;
+        padding: 1.5vmin;
+    }
 
-    </style>
+    .div-shadow{
+        width: 5em ;
+        height: 2em ;
+
+    }
+
+  }
+</style>
 </head>
 
 
 
 <body>
-    <nav class="navbar navbar-static-top bg-white">
-        <div class="container">
-          <div class="navbar-brand brand_flex">
-            <div style="font-weight:bold;color: #3C64B1;font-size: 80%;"><a href="main_page.html" style="text-decoration: none;">ARE YOU READY?</a></div>
-            <div style="font-weight:bold;font-size: 120%; margin-top: 5%;">준비됐멍?</div>
-          </div>
-          <ul class="nav navbar-nav navbar-right" style="margin-top:1%">
-            <li class="active"><a href="test_page.html" onmouseout="change5(this)" onmouseover="change6(this)">반려견 입양 준비도 테스트</a></li>
-            <li><a href="adoption_page.html" onmouseout="change5(this)" onmouseover="change6(this)">유기견 입양</a></li>
-            <li><a href="about_us_page.html" onmouseout="change5(this)" onmouseover="change6(this)">About US</a></li>
-          </ul>
-        </div>
-      </nav>
 
-
-      <h2 id="title" onclick="location.href='test_sub_page.html'" > 문제 만들기 </h2>
-      <p id="sub_title" > 강아지와 관련한 당신의 이야기를 들려주세요</p> 
-      <hr class="box-solid" />
-      
-     
-      
-      
-      <div class="form">
-      <div class="container input-lg">
-        <form action="{% url 'create' %}">
-          <div class="forming ">
-          <div id="form_title">- 제목 /<textarea  cols= '50'name='title' > </textarea></div> <br><br>
-          <div id="form_body">- 내용/<textarea row='10' cols= '100' name='body' > </textarea> </div><br><br> 
-          </div>
-          <input id="button" type="submit" value="등록하기">
-        </form>
-        
+<nav class="navbar navbar-static-top bg-white">
+    <div class="container">
+      <div class="navbar-brand brand_flex">
+        <div style="font-weight:bold;color: #3C64B1;font-size: 80%;"><a href="main_page.html" style="text-decoration: none;">ARE YOU READY?</a></div>
+        <div style="font-weight:bold;font-size: 120%; margin-top: 5%;">준비됐멍?</div>
       </div>
+      <ul class="nav navbar-nav navbar-right" style="margin-top:1%">
+        <li class="active"><a href="test_page.html" onmouseout="change5(this)" onmouseover="change6(this)">반려견 입양 준비도 테스트</a></li>
+        <li><a href="adoption_page.html" onmouseout="change5(this)" onmouseover="change6(this)">유기견 입양</a></li>
+        <li><a href="about_us_page.html" onmouseout="change5(this)" onmouseover="change6(this)">About US</a></li>
+      </ul>
     </div>
-  
+  </nav>
 
+<div class = "container">
+    <div class = "quiz-container">
+        <div class="quiz-head">
+            <h2 id="title" onclick="location.href='링크써주세용'" > 퀴즈만들기 </h2>
+        <p id="sub_title" > 강아지와 관련한 당신의 이야기를 들려주세요 !</p> </div>
+
+        <button class ="quiz-btn" id="button" onclick="location.href='{% url 'new' %}'"> 등록하기</button>
+    </div>
+    <hr class="box-solid" />
+
+
+
+<div class="mainbox">
+    <textarea placeholder="클릭 후 문제를 입력하세요." class="question" rows="1" style=" resize: none; width: 851px; height: 123px;"></textarea>
+    <div class="answer" id="answer">
+        <textarea placeholder="1번 옵션을 입력해주세요" id="0" cols="50" rows="1" ></textarea>
+        <textarea placeholder="2번 옵션을 입력해주세요"id="1" cols="50" rows="1" ></textarea>
+        <button id="add_answer" >+</button>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+const BtnAdd = document.querySelector("#add_answer") ;
+
+BtnAdd.addEventListener("click", AddNew);
+
+function AddNew(){
+    const newDiv = document.createElement("div");
+    console.log("add");
+    document.body.appendChild(newDiv);
+    newDiv.classList.add('div-shadow');
+}
+</script>
 </body>
 </html>
+
+
