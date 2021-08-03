@@ -143,13 +143,7 @@
         padding: 1.5vmin;
     }
 
-    .div-shadow{
-        width: 5em ;
-        height: 2em ;
 
-    }
-
-  }
 </style>
 </head>
 
@@ -191,24 +185,7 @@
         <button id="add_answer" >+</button>
     </div>
 </div>
-
-
-
-
-
-
-<script>
-const BtnAdd = document.querySelector("#add_answer") ;
-
-BtnAdd.addEventListener("click", AddNew);
-
-function AddNew(){
-    const newDiv = document.createElement("div");
-    console.log("add");
-    document.body.appendChild(newDiv);
-    newDiv.classList.add('div-shadow');
-}
-</script>
+ 
 </body>
 </html>
 
