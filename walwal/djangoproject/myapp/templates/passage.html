@@ -38,7 +38,8 @@
             </div>
             <div class="button">
                 <button onclick="location.href='main_page.html'" id="back" onmouseout="change2(this)" onmouseover="change1(this)">메인화면으로 돌아가기</button>
-                <button onclick="location.href='#'" id="sns" onmouseout="change2(this)" onmouseover="change1(this)">SNS 공유하기</button>
+                <button a href="#" onclick="clip(); return false;" id="sns" onmouseout="change2(this)" onmouseover="change1(this)">친구와 함께 풀어보기</button>
+                
             </div>
             <div class="ban">
                 <button onclick="location.href='http://saac.kr/?act=board&bbs_code=sub2_1'" id="banner" onmouseout="change3(this)" onmouseover="change4(this)">혹시 유기견 입양에 관심이 있으신가요?</button> 
@@ -65,12 +66,25 @@
     obj.style.background = 'white';
     obj.style.color = 'black';
     }
-    function change5(obj){
-      obj.style.color = 'black';
-      }
-    function change6(obj){
-      obj.style.color = '#3C64B1';
-     }
+  function change5(obj){
+    obj.style.color = 'black';
+    }
+  function change6(obj){
+    obj.style.color = '#3C64B1';
+    }
+  function clip(){
+
+    var url = '';
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = 'http://127.0.0.1:8000/';
+    textarea.value = url;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("URL이 복사되었습니다.")
+}
+
 </script>
 <style>
     .ban {
